@@ -1,0 +1,6 @@
+{
+  "name": "EMMY Boxing Club",
+  "description": "Premium boxing, fitness, and combat-sports training brand with training programs, schedule, membership, introductory session booking, and EMMY AI voice & text customer assistant.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

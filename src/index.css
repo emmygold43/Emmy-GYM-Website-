@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* 
+  HELLIAN — LAVISH LUXURY FONT SETUP
+  If the Hellian font file (Hellian.woff2, Hellian.otf, etc.) is placed into /public/fonts/,
+  the @font-face rule will automatically serve it.
+  While awaiting the file upload, the fallback stack uses the luxury serif display fonts
+  Cinzel and Playfair Display, which mirror Hellian's lavish luxury aesthetics.
+*/
+@font-face {
+  font-family: 'Hellian';
+  src: url('/fonts/Hellian.woff2') format('woff2'),
+       url('/fonts/Hellian.woff') format('woff'),
+       url('/fonts/Hellian.otf') format('opentype'),
+       url('/fonts/Hellian.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: 'Hellian', 'Cinzel', 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-heading: 'Hellian', 'Cinzel', 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-brand-crimson: #D3121A;
+  --color-brand-crimson-hover: #B80F16;
+  --color-brand-black: #111111;
+  --color-brand-ivory: #F7F6F3;
+  --color-brand-muted: #555555;
+  --color-brand-border: #E8E8E8;
+}
+
+:root {
+  --font-heading: 'Hellian', 'Cinzel', 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: #111111;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+  CONTROLLED RESPONSIVE HEADING SCALE
+  H1 (Hero): ~42–54px desktop, ~36–44px tablet, ~30–36px mobile
+  H2 (Main sections): ~28–36px desktop, ~26–32px tablet, ~23–28px mobile
+  H3 (Cards & Subsections): ~19–24px desktop, ~18–21px mobile
+  H4 (Labels & Accents): ~16–19px
+*/
+h1, .font-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.875rem, 3.6vw, 3.375rem); /* 30px to 54px */
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+h2, .font-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4375rem, 2.5vw, 2.25rem); /* 23px to 36px */
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+h3, .font-h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem); /* 18px to 24px */
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+
+h4, .font-h4 {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.2vw, 1.1875rem); /* 16px to 19px */
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.65;
+}
+
+/* Global utility classes */
+.font-display, .font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F6F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #D3121A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B80F16;
+}
+
+/* Metallic text gradient utility */
+.metallic-text {
+  background: linear-gradient(135deg, #F8FAFC 0%, #CBD5E1 35%, #94A3B8 55%, #F1F5F9 80%, #64748B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Luxury card hover subtle lift & border transition */
+.luxury-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+.luxury-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.08);
+}
+
+/* Luxury frosted glass surfaces */
+.luxury-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
